@@ -1,4 +1,4 @@
-# Firebase-Mapping
+# Firebase-Mapping Script
 
 Firebase mapping is a tool made by and for hackers. Extract the Firebase URL from an apk and check to see if it's vulnerable or has permissions. like deleting, adding, or querying records. I am not responsible for any misuse.
 
