@@ -35,6 +35,7 @@ def readargs() -> Namespace:
     parser.add_argument("-t", "--tablename", dest="tablename", help="dump table columns of database -d is required here", required=False)
     parser.add_argument("-P", "--dump", dest="dumpingdata", help="dump table data or tables data -d, -t are required here", required=False, action="store_true")
     parser.add_argument("-o", "--output", dest="output", help="dump into filename ", required=False)
+    parser.add_argument("-r", "--remove", dest="remove", help="delete record or table `database.tablename.next.next...`", required=False)
     parser.add_argument("-q", "--quiet", action="store_false", dest="verbose", default=True, help="don't print status messages to stdout", required=False)
     arguments = parser.parse_args()
     # ArgumentParser
@@ -56,7 +57,19 @@ def readJson(domain: str):
     pass
 
 
-def deletetable():
+def deleterecord(record: str):
+    domain = args.url
+    record = record.replace('.', '/')
+    domain = (domain + record + '.json') if (domain[-1].strip() == "/") else (domain + '/' + record + '.json')
+    response = requests.delete(domain)
+    if 200 <= response.status_code <= 300:
+        printincolor(f"[+] Record {record} deleted successfully", "green")
+    elif 400 <= response.status_code <= 500:
+        printincolor(f"[-] Record {record} couldn't be deleted check permission", "red")
+    pass
+
+
+def addrecord(record):
     pass
 
 
@@ -150,5 +163,7 @@ if __name__ == '__main__':
             printincolor(f"[+] Table data is : {columns}", "blue")
             pass  # table
         pass  # tablename
+    elif args.remove is not None:
+        deleterecord(args.remove)
 
-    printincolor("Mr.CTFKi11er", "red")
+    printincolor("Mr.CTFKi11er", "white")
