@@ -1,7 +1,6 @@
 # Firebase-Mapping
 
-Firebase-Mapping is a tool made for hackers who extracted the Firebase URL from an apk and want to maintain the data.
-like deleting, adding, or querying records. I am not responsible for any misuse.
+Firebase mapping is a tool made by and for hackers. Extract the Firebase URL from an apk and check to see if it's vulnerable or has permissions. like deleting, adding, or querying records. I am not responsible for any misuse.
 
 ## Installation
 Install it manually, by running these commands 
