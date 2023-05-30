@@ -33,6 +33,9 @@ python3 main.py --url FIREBASE_URL -d DATABASE_NAME -t tablename -P --output FIL
 # run in quite mode 
 python3 main.py --url FIREBASE_URL -d DATABASE_NAME -t tablename -P --output FILENAME -q
 
+# delete record || Replace record with databasename.tablename.columnname.rowdata....etc
+python3 main.py --url FIREBASE_URL -r record 
+
 ```
 
 ## Contributing
