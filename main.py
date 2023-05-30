@@ -44,7 +44,7 @@ def readargs() -> Namespace:
 
 def readJson(domain: str):
     # send a request and get the json file
-    domain = (domain + '.json') if domain[-1] == "/" else ('/' + domain + '.json')
+    domain = (domain + '.json') if (domain[-1].strip() == "/") else (domain + '/' + '.json')
     respnse = requests.get(domain)
     try:
         jsondata = respnse.json()
