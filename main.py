@@ -13,9 +13,9 @@ import pandas as pd
 
 
 def print_hi(name):
-    # ["epic", "fraktur", "lean", "larry3d", "smslant"]
-    f = Figlet(font="epic", width=180)
-    welcome = colored(f.renderText(text=name), "red")
+    # fonts = ["barbwire", "fuzzy", "epic", "fraktur", "lean", "larry3d", "smslant"]
+    f = Figlet(font="fuzzy", width=180)
+    welcome = colored(f.renderText(text=name), "blue")
     if readargs().verbose is not False:
         print(welcome)
     pass
@@ -49,6 +49,9 @@ def readJson(domain: str):
     respnse = requests.get(domain)
     try:
         jsondata = respnse.json()
+        if jsondata is None:
+            printincolor(f"[-] No Database found", "red")
+            exit(0)
         return jsondata
     except Exception as e:
         # // error reading the data in json
@@ -135,7 +138,7 @@ def convertdicttolist(a):
 if __name__ == '__main__':
     # Firebase Hacking
     args = readargs()
-    print_hi("Firebase Mapping")
+    print_hi("Firebase Mapping Script")
     printincolor(f"[*] Start mainpulating the Firebase domain at : {colored(args.url, 'yellow')}", "green")
     jsonData = readJson(args.url)
 
