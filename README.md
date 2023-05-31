@@ -7,9 +7,9 @@ Install it manually, by running these commands
 
 ```bash
 
- git clone https://github.com/cTFk1ller/firebase-mapping.git
- cd firebase-mapping
- pip3 install -r requirements 
+git clone https://github.com/cTFk1ller/firebase-mapping.git
+cd firebase-mapping
+pip3 install -r requirements.txt
 
 
 ```
