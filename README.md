@@ -17,6 +17,9 @@ pip3 install -r requirements.txt
 ## Usage
 
 ```python
+# Check if this app contains a Firebase URL. 
+python3 main.py -a APK_PATH 
+
 # dump databases 
 python3 main.py --url FIREBASE_URL -D 
 
