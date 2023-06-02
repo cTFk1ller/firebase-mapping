@@ -1,6 +1,7 @@
-# Firebase-Mapping Script
+# Firebase Apk Vulnerability Scanner Script
 
-Firebase mapping is a tool made by and for hackers. Extract the Firebase URL from an apk and check to see if it's vulnerable or has permissions. like deleting, adding, or querying records. I am not responsible for any misuse.
+Firebase Apk Vulnerability Scanner is a tool made for hackers. It extracts the Firebase URL from an apk and checks to see if it's vulnerable or has permissions correctly added to it. It will check if the Firebase URL has read and write permissions.
+
 
 ## Installation
 Install it manually, by running these commands 
@@ -17,26 +18,14 @@ pip3 install -r requirements.txt
 ## Usage
 
 ```python
-# Check if this app contains a Firebase URL. 
+# Check if this app contains a Firebase URL.
 python3 main.py -a APK_PATH 
 
-# dump databases 
-python3 main.py --url FIREBASE_URL -D 
+# Use the -o option to save JSON data into a file.
+python3 main.py -a APK_PATH -o OUTPUT
 
-# dump tables 
-python3 main.py --url FIREBASE_URL -d DATABASE_NAME -T  
-
-# dump records 
-python3 main.py --url FIREBASE_URL -d DATABASE_NAME -t tablename -P 
-
-# dump records into a file 
-python3 main.py --url FIREBASE_URL -d DATABASE_NAME -t tablename -P --output FILENAME
-
-# run in quite mode 
-python3 main.py --url FIREBASE_URL -d DATABASE_NAME -t tablename -P --output FILENAME -q
-
-# delete record || Replace record with databasename.tablename.columnname.rowdata....etc
-python3 main.py --url FIREBASE_URL -r record 
+# Use --apk or --url; don't use both; use the -q option to run in quiet mode.
+python3 main.py --url FIREBASE_URL -q
 
 ```
 
