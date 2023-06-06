@@ -11,6 +11,7 @@ from tabulate import tabulate
 import pandas as pd
 from subprocess import Popen, PIPE, STDOUT
 import json
+from pathlib import Path
 
 
 def print_hi(header):
@@ -24,6 +25,14 @@ def print_hi(header):
 def printincolor(word, color='white'):
     print(colored(word, color))
     pass
+
+
+def validate_file(arg):
+    if (file := Path(arg)).is_file():
+        return file
+    else:
+        printincolor(f"[-] File {arg} not found", "red")
+        exit(0)
 
 
 def extractfirebaseurlfromapk():
@@ -42,7 +51,7 @@ def readargs() -> Namespace:
     parser = ArgumentParser()
     parser.add_argument("-u", "--url", dest="url", help="set the firebase url", metavar="URL", required=False)
     parser.add_argument("-o", "--output", dest="output", help="dump into filename ", required=False)
-    parser.add_argument("-a", "--apk", dest="apk", help="enter the path of the APK file.", required=False)
+    parser.add_argument("-a", "--apk", dest="apk", help="enter the path of the APK file.", required=False, type=validate_file)
     parser.add_argument("-q", "--quiet", action="store_false", dest="verbose", default=True,
                         help="don't print status messages to stdout", required=False)
     arguments = parser.parse_args()
