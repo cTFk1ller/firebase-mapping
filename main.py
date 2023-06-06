@@ -168,7 +168,7 @@ def start(firebaseURL: str):
 if __name__ == '__main__':
     # Firebase Hacking
     args = readargs()
-    print_hi("Firebase Apk Vulnerability Scanner Script")
+    print_hi("Firebase's insecure rules scanner")
 
     if args.url is not None:
         firebaseurl = cleardomain(args.url)
