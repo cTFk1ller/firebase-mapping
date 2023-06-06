@@ -1,6 +1,6 @@
-# Firebase Apk Vulnerability Scanner Script
+# Firebase's insecure rules scanner
 
-Firebase Apk Vulnerability Scanner is a tool made for hackers. It extracts the Firebase URL from an apk and checks to see if it's vulnerable or has permissions correctly added to it. It will check if the Firebase URL has read and write permissions.
+Firebase's insecure rules scanner is a tool made for hackers. It extracts the Firebase URL from an apk and checks to see if it's vulnerable or has permissions correctly added to it. It will check if the Firebase URL has read and write permissions.
 
 
 ## Installation
