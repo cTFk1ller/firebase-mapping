@@ -22,7 +22,8 @@ pip3 install -r requirements.txt
 python3 main.py -a APK_PATH 
 
 # Use the -o option to save JSON data into a file.
-python3 main.py -a APK_PATH -o OUTPUT
+# If you didn't provide the full path, the script may crash if you try to write in a higher priority directory.
+python3 main.py -a APK_PATH -o FULL_PATH_OUTPUT
 
 # Use --apk or --url; don't use both; use the -q option to run in quiet mode.
 python3 main.py --url FIREBASE_URL -q
