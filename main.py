@@ -43,7 +43,8 @@ def extractfirebaseurlfromapk():
         if firebase == "":
             return None
         else:
-            apkFirebaseURL = firebase.replace("$$", "")
+            cutfrom = firebase.index('http')
+            apkFirebaseURL = firebase[cutfrom:]
             return apkFirebaseURL
 
 
